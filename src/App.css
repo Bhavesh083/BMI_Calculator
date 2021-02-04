@@ -1,9 +1,16 @@
 body{
     margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
     box-sizing: border-box;
 }
+button:hover{
+    border: 1px solid brown;
+    background-color: rgba(225,99,71,0.507);
+}
 ::placeholder{
-    color: rgb(150, 23, 23);
+    color: rgba(150,23,23);
     text-align: right;
 }
 input,button{
@@ -11,28 +18,30 @@ input,button{
     border: none;
     outline: none;
 }
-button:hover{
-    border: 1px solid brown;
-    background-color: rgba(255, 99, 71, 0.507);
+.anmk{
+    display: grid;
+    grid-template-areas: 
+    'nav nav nav nav nav nav'
+    'info info info info info info'
+    'form cont cont cont cont fotr';
+}
+.nav{
+    background-color: black;
+    color: white;
+    grid-area: nav;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 .info{
-    margin-top: -22px;
-    background-color: rgba(245, 238, 238, 0.767);
+    grid-area: info;
+    background-color: rgba(250, 235, 215, 0.623);
     text-align: center;
-    padding-bottom: 10px;
-}
-.info h1{
-    background-color: rgb(8, 8, 0);
-    color: white;
 }
 .formula{
-    position: absolute;
-    top: 45%;
-    left: 2%;
-    background-color: rgba(182, 177, 176, 0.486);
     text-align: center;
-    width: 25%;
-    margin-left: 15px;
+    grid-area: form;
+    background-color: rgba(50, 53, 50, 0.342);
 }
 .formula ul{
     text-align: center;
@@ -45,43 +54,35 @@ button:hover{
     background-color: black;
     color: white;
     padding: 5px;
-    margin-top: -10px;
+    margin-top: 0px;
 }
-.calci{
-    position: absolute;
-    top: 50%;
-    left: 35%;
-    width: 30%;
+.calci{ 
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.109);
+    grid-area: cont;
+    background-color: rgba(0,0,0,0.109);
 }
 .calci h3{
     background-color: black;
     color: white;
-    margin-top: 0px;
     padding: 5px;
+    margin-top: 0px;
 }
 .calci input{
     padding: 5px;
     margin: 8px;
 }
 .calci h4{
-    padding: 15px;
+    padding: 14px;
     background-color: black;
     color: white;
     margin-bottom: 0px;
 }
-button{
-   padding: 5px;
-   margin-right: 20px ;
-   margin-top: 15px;
-}
-footer{
-    position: absolute;
+.fotr{
+    box-sizing: border-box;
+    text-align: center;
     padding: 10px;
-    top: 45%;
-    left: 70%;
-    background-color: rgba(216, 191, 216, 0.479);
+    grid-area: fotr;
+    background-color: rgba(207, 190, 207, 0.774);
 }
 table,td,th{
     text-align: center;
@@ -89,62 +90,32 @@ table,td,th{
     border-collapse: collapse;
     padding: 10px;
 }
-@media only screen and (max-width:800px){
-    footer{
-      top: 115%;
-      width: 40%;
-      left: 25%;
-    }
-    .calci{
-      top: 59%;
-      width: 50%;
-      left: 44%;
-    }
-    .formula{
-       top:55%;
-       width: 35%;
-    }
+table{
+    margin-left: 10px;
 }
-@media only screen and (max-width:550px){
-    footer{
-      top: 58%;
-      width: 40%;
-      left: 47%;
-    }
-    .calci{
-      top: 120%;
-      width: 80%;
-      left: 5%;
-      padding-bottom: 60px;
-    }
-    .formula{
-       top:60%;
-       width: 35%;
-    }
-    table , tr ,td{
-        padding: 3px;
-    }
+@media screen and (max-width:700px){
+    .anmk{
+        display: grid;
+        grid-template-areas: 
+        'nav nav nav nav nav nav'
+        'info info info info info info'
+        'cont cont cont fotr fotr fotr'
+        'form form form fotr fotr fotr';
+    }  
 }
-@media only screen and (max-width:480px){
-    footer{
-      top: 65%;
-      width: 43%;
-      left: 52%;
-      padding-left: 0px;
+@media screen and (max-width:500px){
+    .anmk{
+        display: grid;
+        grid-template-areas: 
+        'nav nav nav nav nav nav'
+        'info info info info info info'
+        'cont cont cont form form form'
+        'fotr fotr fotr fotr fotr fotr'
+    }  
+    .formula li{
+        text-align:left;
     }
-    .calci{
-      top: 125%;
-      width: 80%;
-      left: 5%;
-      padding-bottom: 60px;
-    }
-    .formula{
-       top:62%;
-       text-align: left;
-       width: 45%;
-       left: 0%;
-    }
-    table , tr ,td{
-        padding: 0px;
+    table{
+        margin-left: 12vw;
     }
 }
